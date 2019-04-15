@@ -31,7 +31,7 @@ def areaUnderCurve(a, b, h):
 
 # Simple Trapezoid Method (n = 1)
 def simpleTrapezoid(a, b, h):
-    value = ((h/2) * (small_F(a) + small_F(b)))
+    value = ((h / 2) * (small_F(a) + small_F(b)))
 
     # to change ->
     zeta = -0.721
