@@ -87,6 +87,7 @@ def simpleCheb_n4(a, b, h):
 a = -1.0
 b = 0.5
 h = b - a
+x=1
 
 print("\nSimple Area under curve: ")
 areaUnderCurve(a, b, h)
