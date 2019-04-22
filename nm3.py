@@ -3,9 +3,8 @@ import numpy as np
 
 def f(x):  # function
     return 3 * (x ** 2) - 2 * x - 5
-    # return np.cos(x)
-
-
+    
+    
 def nodes():  # equally spaced nodes
     h = (b - a) / nc
     for nn in range(nc + 1):
@@ -19,7 +18,8 @@ def xi(i):  # chebyshev function
 def cheb():  # chebyshev nodes
     for i in range(nc + 1):
         n[nc - i] = ((b - a) * xi(i) / 2) + (a + b) / 2
-    print n
+
+    print(n)
 
 
 def errors(o):  # calculate errors with step o
