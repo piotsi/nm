@@ -55,10 +55,6 @@ def simpleSimpson(a, b):
     print("Error: " + str(error))
 
 
-# Simple n=4 Formula
-#def simpleN_4:
-
-
 # Simple Cheb. Method (n = 2)
 def simpleCheb_n2(a, b):
 
@@ -126,6 +122,7 @@ def compSimpson(a,b):
     print("Value: " + str(value))
     print("Error: " + str(error))
 
+
 # Composite Rectangle Method (n=0, m=20)
 def compRectangle(a,b):
 
@@ -170,13 +167,13 @@ def compRectangle(a,b):
 a = -1.0
 b = 0.5
 
+
 # Functions application
 print("\nSimple Rectangle: ")
 simpleRectangle(a, b)
 
 print("\nSimple Trapezoid: ")
 simpleTrapezoid(a, b)
-
 
 print("\nSimple Simpson: ")
 simpleSimpson(a, b)
