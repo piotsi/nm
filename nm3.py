@@ -3,8 +3,8 @@ import numpy as np
 
 def f(x):  # function
     return 3 * (x ** 2) - 2 * x - 5
-    
-    
+
+
 def nodes():  # equally spaced nodes
     h = (b - a) / nc
     for nn in range(nc + 1):
