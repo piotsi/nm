@@ -9,10 +9,10 @@ def characteristicCoefficients():
         y[i][:] = np.dot(A, y[i - 1][:])
     # solve linear equations from matrix, then flip from p1->pn to pn->p1
     p = np.flipud(np.linalg.solve(np.transpose(y[:][0:len(A)]), -y[len(A)][:]))
-    return p
+    return ('Characteristic polynomial coefficients are equal: ' + str(p))
 
 
-def eigenVal():
+def matrixProperties(): # Funcion checking if matrix is positive definite
     d1 = A[0][0]
     d2 = np.linalg.det([[1.0, 1.0], [1.0, 2.0]])
     d3 = np.linalg.det(A)
@@ -21,7 +21,46 @@ def eigenVal():
     else:
         print("Matrix is not positive definite")
 
+        
 
-A = [[1.0, 1.0, 1.0], [1.0, 2.0, 3.0], [1.0, 3.0, 6.0]]
+def iterativeMethod(A): # Function calculating calue of the first eigenvalue of matrix A
+
+    coeffX1=[]
+    coeffX2=[]
+    coeffEigen=[]
+
+    k = 8   # number of iterations
+    x3 = 1  # value taken from theorem
+    x1 = 1  # arbitrary set value
+    x2 = 1  # arbitrary set value
+
+    eigen=(1.0/x3)*(A[2][0]*x1+A[2][1]*x2+A[2][2]*x3)
+    x1=(1.0/eigen)*(A[0][0]*x1+A[0][1]*x2+A[0][2]*x3)
+    x2=(1.0/eigen)*(A[1][0]*x1+A[1][1]*x2+A[1][2]*x3)
+
+    coeffX1.append(x1)
+    coeffX2.append(x2)
+    coeffEigen.append(eigen)
+
+    for i in range(k):
+            j=0
+            x1 = (1/coeffEigen[i])*((A[0][j]*coeffX1[i]) +
+                                (A[0][j+1]*coeffX2[i])+A[0][j+2])
+            x2 = (1/coeffEigen[i])*((A[1][j]*coeffX1[i]) +
+                                (A[1][j+1]*coeffX2[i])+A[1][j+2])
+        
+            coeffX1.append(x1)
+            coeffX2.append(x2)
+
+            eigen = (A[2][j]*coeffX1[i+1])+(A[2][j+1]*coeffX2[i+1])+A[2][2]
+            coeffEigen.append(eigen)
+
+    print('First eigenvalue is equal: ' + str(coeffEigen[8]))
+    print('First eigenvector is equal: [' + str(coeffX1[8]) + ', ' + str(coeffX2[8]) + ', ' + str(x3) + ']')
+
+
+A = [[1.0, 1.0, 1.0], [1.0, 2.0, 3.0], [1.0, 3.0, 6.0]] # Input matrix 
+
 print(characteristicCoefficients())
-eigenVal()
+matrixProperties()
+iterativeMethod(A)
