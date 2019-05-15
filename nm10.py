@@ -5,10 +5,6 @@ def function1(x, y):
     return -0.7 * y + m.e ** -x
 
 
-def function2(x, y):
-    return 7.0 * y + 14
-
-
 def euler(h, interval):
 
     a, b = interval
