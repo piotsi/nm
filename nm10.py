@@ -42,7 +42,7 @@ def runge_kutta(h, interval, y0):
                 i, x0, y0
             )
         )
-        
+
         k1 = h * f(x0, y0)
         k2 = h * f(x0 + h / 2, y0 + k1 / 2)
         k3 = h * f(x0 + h / 2, y0 + k2 / 2)
