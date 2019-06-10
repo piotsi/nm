@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 
 def f(x, y):
-    return -0.7 * y + m.e ** -x
+    return -0.7 * y + m.e ** (-x)
 
 
 def euler(h, interval, y0):
