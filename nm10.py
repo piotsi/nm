@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 
 def f(x, y):
-    return -0.7 * y + m.e ** -x
+    return -0.7 * y + m.e ** (-x)
 
 
 def euler(h, interval, y0):
@@ -67,3 +67,4 @@ runge_kutta(h, interval, y0)
 plt.legend(loc='upper right')
 plt.axhline(color='k', linewidth=0.5)
 plt.show()
+
