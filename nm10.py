@@ -67,3 +67,4 @@ runge_kutta(h, interval, y0)
 plt.legend(loc='upper right')
 plt.axhline(color='k', linewidth=0.5)
 plt.show()
+
