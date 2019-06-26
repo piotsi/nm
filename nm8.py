@@ -23,7 +23,7 @@ def matrixProperties():  # Funcion checking if matrix is positive definite
 
 
 def iterativeMethod(A):  # Function calculating value of the first eigenvalue
-                        # of matrix A
+    # of matrix A
 
     coeffX1 = []
     coeffX2 = []
@@ -55,10 +55,21 @@ def iterativeMethod(A):  # Function calculating value of the first eigenvalue
         coeffX1.append(x1)
         coeffX2.append(x2)
 
-        eigen1 = (A[2][j] * coeffX1[i + 1]) + (A[2][j + 1] * coeffX2[i + 1]) + A[2][2]
+        eigen1 = (
+            (A[2][j] * coeffX1[i + 1]) +
+            (A[2][j + 1] * coeffX2[i + 1]) +
+            A[2][2]
+        )
         coeffEigen1.append(eigen1)
-    print("First eigenvalue is equal: " + str(coeffEigen1[8]))
-    print("First eigenvector is equal: [" + str(coeffX1[8]) + ", " + str(coeffX2[8]) + ", " + str(x3) + "]")
+    # print(coeffX1)
+    # print(coeffX2)
+    # print(coeffEigen1)
+    print("First eigenvalue is equal: {}".format(str(coeffEigen1[8])))
+    print(
+        "First eigenvector is equal: [{}, {}, {}]".format(
+            str(coeffX1[8]), str(coeffX2[8]), str(x3)
+        )
+    )
 
 
 A = [[1.0, 1.0, 1.0], [1.0, 2.0, 3.0], [1.0, 3.0, 6.0]]  # Input matrix
