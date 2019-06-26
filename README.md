@@ -11,5 +11,5 @@
 - nm8 - Determining Eigenvalues And Eigenvectors of Matrix
 - nm9 - Approximate Solving of Non-Linear Equations
 - nm10 - Approximate Solving of Ordinary Differential Equations
-- (TBD) *nm11 - Approximate Solving of Partial Differential Equations* 
+- ~~nm11 - Approximate Solving of Partial Differential Equations~~
 - (TBD) *nm12 - Approximate Solving of Integral Equations* 

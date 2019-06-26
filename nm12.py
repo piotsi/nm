@@ -1,26 +1,43 @@
-import math as m
+import numpy as np
 from matplotlib import pyplot as plt
 
 
-def f(z):
-    return -0.5 * m.e ** (-2 * z) - 0.5
+def kernel(x):
+    return np.exp(-x)
 
 
-def create_interval(a, b, h):
-    zTab, yTab = [], []
-    for i in range(h + 1):
-        zTab.append((b - a) * i / h)
-    yTab = [f(z) for z in zTab]
-    return zTab, yTab
-
-zTab, yTab = create_interval(a=0, b=3, h=100)
+def f(x):
+    return 5
 
 
-print(zTab)
-print(yTab)
+def analitical():
+    def f(z):
+        ##################################
+        return 5 + 5 * z
 
-plt.axhline(color='k', lw=0.5)
-plt.axvline(color='k', lw=0.5)
+    zAn = [f(z) for z in yArange]
 
-plt.plot(zTab, yTab, 'ro-', ms=3)
+    plt.axhline(color="k", lw=0.5)
+    plt.axvline(color="k", lw=0.5)
+
+    plt.plot(yArange, zAn, "ro-", ms=3)
+
+
+a, b, h = 0, 1, 0.01
+iterations = 100
+yArange = np.arange(a, b + h, h)
+
+analitical()
+
+x = np.zeros(len(yArange))
+
+for n in range(2, iterations + 1):
+    for i in range(len(yArange)):
+        temp = 0
+        for j in range(i):
+            temp += kernel(yArange[i] - yArange[j]) * x[j] * h
+        x[i] = temp + f(yArange[i])
+
+plt.plot(yArange, x, "go-", ms=3)
+
 plt.show()
