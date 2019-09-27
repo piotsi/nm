@@ -120,8 +120,7 @@ def compSimpson(a, b):
 
     value = (abs(distance) / -3) * (
         small_F(a) + 4 * small_F(x1) + 2 * small_F(x2) +
-        4 * small_F(x3) + small_F(b)
-    )
+        4 * small_F(x3) + small_F(b))
 
     # to change ->
     zeta = 0.5
